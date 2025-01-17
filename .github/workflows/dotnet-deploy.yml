@@ -4,9 +4,9 @@ env:
   registryName: 2zbnoedefy3rwmpnpreg.azurecr.io
   repositoryName: techexcel/dotnetcoreapp
   dockerFolderPath: ./src/Application/src/RazorPagesTestSample
-  dev_prefix: 2zbnoedefy3rwmpnpreg-dev
-  test_prefix: 2zbnoedefy3rwmpnpreg-test
-  prod_prefix: 2zbnoedefy3rwmpnpreg-prod
+  dev_prefix: 2zbnoedefy3rw-dev
+  test_prefix: 2zbnoedefy3rw-test
+  prod_prefix: 2zbnoedefy3rw-prod
   tag: ${{github.run_number}}
 
 on:
@@ -92,7 +92,7 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: 2zbnoedefy3rwmpnpreg-dev
+          app-name: 2zbnoedefy3rw-dev
           images: 2zbnoedefy3rwmpnpreg.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}
 
   deploy-to-test:
@@ -113,7 +113,7 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 2zbnoedefy3rwmpnpreg-test
+        app-name: 2zbnoedefy3rw-test
         images: 2zbnoedefy3rwmpnpreg.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}
 
   deploy-to-prod:
@@ -134,5 +134,5 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 2zbnoedefy3rwmpnpreg-prod
+        app-name: 2zbnoedefy3rw-prod
         images: 2zbnoedefy3rwmpnpreg.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}
